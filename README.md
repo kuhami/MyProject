@@ -24,5 +24,8 @@ git add . 添加文件到本地git(注意add后面的那个小点点要有)
 git commit -m '这里是提交的注释，必须要有！否则无法提交到服务器！'
 git push -u origin v1.0 提交代码到服务器
 
+git branch -d v1.0 删除本地分支
+git push origin :v1.0 删除github远程分支
+
  ```
 
