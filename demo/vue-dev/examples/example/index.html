@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../dist/vue.min.js"></script>
+    <script src="../../../js/jquery-2.2.4.min.js"></script>
+</head>
+<body>
+<!--demo2-->
+<div class="app-2">
+    <!--v-bind 属性被称为指令作用是：“将这个元素节点的 title 属性和 Vue 实例的 message 属性保持一致”。-->
+  <span v-bind:title="message" style="cursor: pointer;">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+    <p>html也可以</p>
+    <p>
+        {{message}}
+    </p>
+</div>
+<!--demo3-->
+<div class="app-3">
+    <p v-if="noseen">现在你看到我了</p>
+    <p v-if="seen" style="color: #5f7bff;">现在你看到我了22</p>
+</div>
+
+<!--列表循环 v-for 循环列表-->
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+           {{ todo.text }}
+        </li>
+    </ol>
+</div>
+
+<div id="app-5">
+    <p>{{ message }}</p>
+    <button @click="reverseMessage">逆转消息</button>
+    <button v-on:click="reverseMessage">逆转消息1</button>
+</div>
+<div id="app-6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+</body>
+<script>
+
+    var app2 = new Vue({
+        el: '.app-2',
+        data: {
+            message: '页面加载于 ' + new Date().toLocaleString()
+        }
+    })
+
+    var app3 = new Vue({
+        el: '.app-3',
+        data: {
+            seen:true,
+            noseen:false,
+        }
+    })
+
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos:[
+                {text: '学习 JavaScript'},
+                {text: '学习 JavaScript'},
+                {text: '学习 JavaScript'},
+                {text: '学习 JavaScript'},
+            ]
+        }
+    });
+
+    app4.todos.push({ text: '新项目' },{ text: '新项目' });
+
+    var app5 = new Vue({
+        el: '#app-5',
+        data: {
+            message: 'Hello Vue.js!'
+        },
+        methods: {
+            reverseMessage: function () {
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    })
+
+    var app6 = new Vue({
+        el: '#app-6',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+</script>
+</html>

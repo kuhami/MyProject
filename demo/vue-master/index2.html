@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index2</title>
+</head>
+<body>
+<div id="app">
+    <p v-bind:class="{active}">{{message}}</p>
+    <my-component class="too"></my-component>
+    <div  v-bind:style="{ color: activeColor, fontSize: fontSize + 'px',display: ['-webkit-box', '-ms-flexbox', 'flex'] }">绑定内联样式</div>
+    <h1 v-if="Ifactive">我是判断语句v-if Yes</h1>
+    <h1 v-else>我是判断语句v-if No</h1>
+</div>
+
+<script src="js/vue.min.js"></script>
+<script>
+    <!--先声明了这个组件-->
+    Vue.component('my-component',{
+        template: '<p class="foo bar">Hi vue</p>'
+    });
+
+    var app = new Vue({
+        el:"#app",
+        data:{
+            message:"hello vue",
+            active:false,
+            activeColor:'red',
+            fontSize:16,
+            bck:'#e78c45',
+            Ifactive:false
+        }
+    });
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表渲染 用 v-for 把一个数组对应为一组元素(v-for)</title>
+</head>
+<body>
+<div id="app">
+
+    <p>{{message}}</p>
+    <ul>
+        <li v-for="(item,index) in items" v-bind:message="index">
+           {{message}} - {{ item.message }}-{{index}}
+        </li>
+    </ul>
+    <my-component>
+
+    </my-component>
+</div>
+
+<ul id="v-for-object" class="demo">
+    <li v-for="(value,key,index) in object" v-bind:key1="value">
+        {{index}}.{{ key }}:{{value}}
+    </li>
+</ul>
+
+<script src="js/vue.min.js"></script>
+<script>
+    <!--先声明了这个组件-->
+
+
+    Vue.component('my-component',{
+        template: '<p class="foo bar" style="color: red;">{{message}}</p>',
+        data:function () {
+            var data = { counter: 0,message:'我是动态component' };
+            return data;
+        }
+    });
+
+    //v-for 指令需要使用 item in items 形式的特殊语法，items 是源数据数组并且 item 是数组元素迭代的别名。
+    var app = new Vue({
+        el:"#app",
+        data:{
+            message:"hello vue",
+            items:[
+                { message: 'Foo' },
+                { message: 'Bar' }
+            ]
+        }
+    });
+    new Vue({
+        el: '#v-for-object',
+        data: {
+            object: {
+                firstName: 'John',
+                lastName: 'Doe',
+                age: '30'
+            }
+        }
+    })
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>时间处理方法</title>
+</head>
+<body>
+<div id="example-1">
+    <button v-on:click="counter += 1">Add 1</button>
+    <p>The button above has been clicked {{ counter }} times.</p>
+</div>
+
+<div id="example-2">
+    <button v-on:click="greet">Add 2</button>
+    <button v-on:click="greet('hi')">hi 2</button>
+    <button v-on:hover="greet('hellow')">hellow 2</button>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+
+    var example1 = new Vue({
+       el:"#example-1",
+        data:{
+            counter:1,
+        }
+    });
+
+    var example2 = new Vue({
+        el:"#example-2",
+        data:{
+            counter:1,
+            name: 'Vue.js'
+        },
+        methods:{
+            greet:function (event) {
+                console.log(event);
+
+                // `this` 在方法里指向当前 Vue 实例
+                alert('Hello ' + this.name + '!');
+                // `event` 是原生 DOM 事件
+//                if (event) {
+//                    alert(event.target.tagName)
+//                }
+            }
+        }
+
+    });
+
+</script>
+</body>
+</html>

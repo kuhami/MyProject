@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*other style*/
+*{margin:0;padding:0;}
+html{background:none repeat scroll 0 0 #fff;color:#626262;overflow-y:scroll;}
+body{font-family:Arial,sans-serif,STHeiti;}
+img{border:0 none; vertical-align:top;border:none;}
+
+a {text-decoration:none;cursor:pointer;}
+html{font-size:62.5%;}
+body{font-family:"华文细黑";}
+
+.content{width:77%; height:100px;}
+

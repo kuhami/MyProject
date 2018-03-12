@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title></title>  
+  
+    <script type="text/javascript" src="jquery/jquery-1.8.3.min.js"></script>  
+    <script type="text/javascript">  
+  
+        //控制输入框只能输入数字和小数点  
+        function limit(id){  
+            var limitV=$("#"+id).val();  
+            $("#"+id).val(limitV.replace(/[^0-9.]/g,""));  
+            format(id);  
+        }  
+  
+        //对输入数字的整数部分插入千位分隔符  
+        function format(id){  
+            var formatV=$("#"+id).val();  
+            var array=new Array();  
+            array=formatV.split(".");  
+  
+            var re=/(-?\d+)(\d{3})/;  
+            while(re.test(array[0])){  
+                array[0]=array[0].replace(re,"$1,$2")  
+            }  
+  
+            var returnV=array[0];  
+            for(var i=1;i<array.length;i++){  
+                returnV+="."+array[i];  
+            }  
+            $("#"+id).val(returnV);  
+        }  
+  
+        //过滤掉数据的千位分隔符  
+        function unformat(id){  
+            var v=$("#"+id).val();  
+            var x = v.split(',');  
+            var returnV=parseFloat(x.join(""));  
+            $("#"+id).val(returnV);  
+        }  
+  
+    </script>  
+  
+</head>  
+<body>  
+    <input type="text" name="dy" id="dy" onkeyup="limit('dy')" onFocus="format('dy')" />  
+</body>  
+</html> 

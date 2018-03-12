@@ -1,0 +1,173 @@
+/*重置默认的外边距和内边距*/
+*{
+    margin:0;
+    padding:0;
+}
+/*常用标签的样式重置*/
+i{
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+}
+input{
+    outline: none;
+    border:none;
+}
+/*设定html和body的宽度为100%*/
+html,body{
+    width:100%;
+    font-size: 14px;
+}
+/*版心*/
+.containerSign{
+    width:1210px;
+    margin:0 auto;
+    
+}
+/*头部*/
+.headerSign{
+    width:100%;
+    height: 110px;
+    box-shadow: 10px 10px 10px rgba(111,111,111,.5);
+    position: relative;
+
+}
+/*Logo*/
+.headerSign .logoxme{
+    display: inline-block;
+    width: 80px;
+    
+    /*background: url("../images/logo.png") no-repeat;*/
+    position: absolute;
+    top:10px;
+    left:40px;
+}
+.headerSign .desc{
+    font-size: 18px;
+    line-height: 34px;
+    border-left: 1px solid #ccc;
+    position: absolute;
+    left: 150px;
+    top:34px;
+    padding-left: 20px;
+    font-weight:bold;
+}
+/*-----------------------------------京东注册模块---------------------------*/
+.registerSign{
+	width: 400px;
+	margin: 0 auto;
+	padding-top:40px;
+	position: relative;
+}
+/*包裹表单项和对应的提示信息的容器的样式设置*/
+.register-boxSign{
+	width:100%;
+	height: 90px;
+	padding-bottom: 30px;
+}
+/*表单项样式设置*/
+.register-boxSign .boxSign{
+	width:100%;
+	height:100%;
+	line-height: 52px;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+.register-boxSign .boxSign.errorSign{
+	border:1px solid red;
+}
+.register-boxSign .boxSign input{
+	width:200px;
+	font-size:16px;
+	padding-left: 20px;
+}
+/*验证通过*/
+.register-boxSign .boxSign.rightSign i{
+	width:20px;
+	height: 20px;
+	background: url(../images/right.png) no-repeat center center;
+	position: absolute;
+	top:50%;
+	margin-top: -10px;
+	right: 10px;
+	
+}
+/*提示信息样式设置*/
+.register-boxSign .tipSign {
+	width:100%;
+	line-height: 30px;
+	font-size: 12px;
+}
+.register-boxSign .tipSign i{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.register-boxSign .tipSign span{
+	color: #CCCCCC;
+}
+/*提示信息隐藏样式*/
+.register-boxSign .tipSign.hideSign{
+	display: none;
+}
+/*提示信息默认样式*/
+.register-boxSign .tipSign.defaultSign i {
+	background: url(../images/default.png) no-repeat center center;
+}
+.register-boxSign .tipSign.defaultSign span{
+	color: #ccc;
+}
+/*提示信息错误样式*/
+.register-boxSign .tipSign.errorSign i {
+	background: url(../images/error.png) no-repeat center center;
+}
+.register-boxSign .tipSign.errorSign span{
+	color: red;
+}
+/*提示信息密码弱*/
+.register-boxSign .tipSign.ruo i {
+	background: url(../images/ruo.png) no-repeat center center;
+}
+/*提示信息密码中*/
+.register-boxSign .tipSign.zhong i {
+	background: url(../images/zhong.png) no-repeat center center;
+}
+/*提示信息密码中*/
+.register-boxSign .tipSign.qiang i {
+	background: url(../images/qiang.png) no-repeat center center;
+}
+/*京东用户注册协议*/
+.register-boxSign.xieyi{
+	width:100%;
+	height: 20px;
+	padding-bottom: 30px;
+/*	background-color: #ccc;*/
+}
+.register-boxSign.xieyi .boxSign{
+	line-height: normal;
+	padding: 0;
+	border: none;
+}
+.register-boxSign.xieyi .boxSign.errorSign{
+	line-height: normal;
+	padding: 0;
+	border: 1px solid red;
+}
+.register-boxSignSign.xieyi .boxSign input{
+	width: auto;
+}
+/*注册*/
+.register button{
+	width: 100%;
+	height: 40px;
+	font:bold 18px/40px "宋体";
+	color: white;
+	background-color: darkred;
+	outline-color: white;
+}
+.register button:hover{
+	background-color: red;
+}

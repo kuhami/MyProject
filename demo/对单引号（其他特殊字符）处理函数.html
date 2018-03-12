@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>对单引号（其他特殊字符）处理函数</title>
+	</head>
+
+	<body>
+	</body>
+	<script type="text/javascript">
+
+		function EscapeChar(HaveSpecialval) {
+
+			HaveSpecialval = HaveSpecialval.replace(/\,/g, "");
+			
+			return HaveSpecialval;
+		};
+		
+		
+		document.write(EscapeChar(" 12, ,,,1, 2 "));
+		 //金额转换
+            function Convert(money) {
+                var s = money; //获取小数型数据
+                s += "";
+                if (s.indexOf(".") == -1) s += ".0"; //如果没有小数点，在后面补个小数点和0
+                if (/\.\d$/.test(s)) s += "0"; //正则判断
+                while (/\d{4}(\.|,)/.test(s)) //符合条件则进行替换
+                    s = s.replace(/(\d)(\d{3}(\.|,))/, "$1,$2"); //每隔3位添加一个
+                return s;
+            }
+
+
+        var st1 = "我是(是觉得冯绍峰的不俗办法(12))水淀粉";
+
+        var st2 = st1.substring(st1.indexOf("(")+1,st1.indexOf(")"));
+
+        console.log(st2);
+
+	</script>
+
+</html>

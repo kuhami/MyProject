@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+		
+		<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+		
+	</head>
+
+	<body>
+		<div class="col-md-3 sidebar">
+			<div class="row">
+				<div>
+					<input type="text" id="key" class="empty form-control" placeholder="Search..." onkeyup="callNumber()">
+				</div>
+				<div>
+					<label type="text" id="resultKey" class="form-control">  
+                <div>  
+                    <a id="clickUp" class="glyphicon glyphicon-menu-up" onclick="clickUp()">上</a>  
+                    <a id="clickDown" class="glyphicon glyphicon-menu-down" onclick="clickDown()">下一条</a>  
+                </div>  
+                <label id="number"></label>
+					</label>
+				</div>
+			</div>
+			<ul id="tree" class="ztree"></ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var setting = {
+			view: {
+				selectedMulti: true //是否允许多选
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				//zTree节点的点击事件
+//				onClick: onClick
+			}
+		};
+				var zNodes = [{
+				"id": "3",
+				"title": "权限控制",
+				"pId": "0",
+				"order": "100",
+				"name": "权限控制",
+				"selected": 0,
+				"children": [{
+						"id": "1",
+						"title": "分配角色",
+						"pId": "3",
+						"order": "5",
+						"name": "分配角色",
+						"selected": 0
+					},
+					{
+						"id": "2",
+						"title": "菜单管理",
+						"pId": "3",
+						"order": "6",
+						"name": "菜单管理",
+						"selected": 0,
+						"children": [{
+							"id": "94",
+							"title": "aaaaaa",
+							"pId": "2",
+							"order": "0",
+							"name": "aaaaaa",
+							"selected": 0
+						}]
+					},
+					{
+						"id": "4",
+						"title": "路由管理",
+						"pId": "3",
+						"order": "4",
+						"name": "路由管理",
+						"selected": 0
+					},
+					{
+						"id": "5",
+						"title": "权限管理",
+						"pId": "3",
+						"order": "3",
+						"name": "权限管理",
+						"selected": 0
+					},
+					{
+						"id": "6",
+						"title": "角色管理",
+						"pId": "3",
+						"order": "2",
+						"name": "角色管理",
+						"selected": 0
+					},
+					{
+						"id": "7",
+						"title": "用户管理",
+						"pId": "3",
+						"order": "7",
+						"name": "用户管理",
+						"selected": 0
+					}
+				]
+			},
+			{
+				"id": "16",
+				"title": "日志管理",
+				"pId": "0",
+				"order": "30",
+				"name": "日志管理",
+				"selected": 0,
+				"children": [{
+					"id": "17",
+					"title": "日志列表",
+					"pId": "16",
+					"order": "0",
+					"name": "日志列表",
+					"selected": 0,
+					"children": [{
+						"id": "89",
+						"title": "日志菜单3",
+						"pId": "17",
+						"order": "0",
+						"name": "日志菜单3",
+						"selected": 0
+					}]
+				}]
+			},
+			{
+				"id": "18",
+				"title": "UI元素管理",
+				"pId": "0",
+				"order": "30",
+				"name": "UI元素管理",
+				"selected": 0,
+				"children": [{
+						"id": "19",
+						"title": "Icons图标",
+						"pId": "18",
+						"order": "1",
+						"name": "Icons图标",
+						"selected": 0
+					},
+					{
+						"id": "20",
+						"title": "Buttions图案",
+						"pId": "18",
+						"order": "2",
+						"name": "Buttions图案",
+						"selected": 0
+					}
+				]
+			},
+			{
+				"id": "22",
+				"title": "运营管理",
+				"pId": "0",
+				"order": "1",
+				"name": "运营管理",
+				"selected": 0,
+				"children": [{
+						"id": "23",
+						"title": "文章管理",
+						"pId": "22",
+						"order": "0",
+						"name": "文章管理",
+						"selected": 0
+					},
+					{
+						"id": "28",
+						"title": "站内信管理",
+						"pId": "22",
+						"order": "0",
+						"name": "站内信管理",
+						"selected": 0
+					}
+				]
+			},
+			{
+				"id": "25",
+				"title": "企业管理",
+				"pId": "0",
+				"order": "6",
+				"name": "企业管理",
+				"selected": 0,
+				"children": [{
+						"id": "26",
+						"title": "企业列表",
+						"pId": "25",
+						"order": "1",
+						"name": "企业列表",
+						"selected": 0
+					},
+					{
+						"id": "27",
+						"title": "合同资料",
+						"pId": "25",
+						"order": "2",
+						"name": "合同资料",
+						"selected": 0
+					},
+					{
+						"id": "51",
+						"title": "品牌列表",
+						"pId": "25",
+						"order": "4",
+						"name": "品牌列表",
+						"selected": 0
+					}
+				]
+			},
+			{
+				"id": "29",
+				"title": "业务管理",
+				"pId": "0",
+				"order": "17",
+				"name": "业务管理",
+				"selected": 0,
+				"children": [{
+						"id": "30",
+						"title": "融资项目管理",
+						"pId": "29",
+						"order": "0",
+						"name": "融资项目管理",
+						"selected": 0
+					},
+					{
+						"id": "31",
+						"title": "融资申请管理",
+						"pId": "29",
+						"order": "0",
+						"name": "融资申请管理",
+						"selected": 0
+					},
+					{
+						"id": "33",
+						"title": "项目订单管理",
+						"pId": "29",
+						"order": "0",
+						"name": "项目订单管理",
+						"selected": 0
+					},
+					{
+						"id": "37",
+						"title": "项目贷后管理",
+						"pId": "29",
+						"order": "0",
+						"name": "项目贷后管理",
+						"selected": 0
+					}
+				]
+			},
+			{
+				"id": "34",
+				"title": "内容管理",
+				"pId": "0",
+				"order": "18",
+				"name": "内容管理",
+				"selected": 0,
+				"children": [{
+						"id": "35",
+						"title": "附件列表",
+						"pId": "34",
+						"order": "0",
+						"name": "附件列表",
+						"selected": 0
+					},
+					{
+						"id": "36",
+						"title": "添加附件",
+						"pId": "34",
+						"order": "0",
+						"name": "添加附件",
+						"selected": 0
+					}
+				]
+			},
+			{
+				"id": "38",
+				"title": "资料授权",
+				"pId": "0",
+				"order": "0",
+				"name": "资料授权",
+				"selected": 0,
+				"children": [{
+					"id": "39",
+					"title": "申请列表",
+					"pId": "38",
+					"order": "0",
+					"name": "申请列表",
+					"selected": 0
+				}]
+			},
+			{
+				"id": "40",
+				"title": "账号管理",
+				"pId": "0",
+				"order": "16",
+				"name": "账号管理",
+				"selected": 0,
+				"children": [{
+						"id": "53",
+						"title": "餐企账号",
+						"pId": "40",
+						"order": "4",
+						"name": "餐企账号",
+						"selected": 0
+					},
+					{
+						"id": "54",
+						"title": "中控账号",
+						"pId": "40",
+						"order": "8",
+						"name": "中控账号",
+						"selected": 0
+					},
+					{
+						"id": "56",
+						"title": "角色权限",
+						"pId": "40",
+						"order": "2",
+						"name": "角色权限",
+						"selected": 0
+					},
+					{
+						"id": "85",
+						"title": "资金方账号",
+						"pId": "40",
+						"order": "6",
+						"name": "资金方账号",
+						"selected": 0
+					}
+				]
+			},
+			{
+				"id": "48",
+				"title": "餐企管理",
+				"pId": "0",
+				"order": "3",
+				"name": "餐企管理",
+				"selected": 0,
+				"children": [{
+						"id": "49",
+						"title": "品牌管理",
+						"pId": "48",
+						"order": "0",
+						"name": "品牌管理",
+						"selected": 0,
+						"children": [{
+								"id": "100",
+								"title": "品牌管理1",
+								"pId": "49",
+								"order": "0",
+								"name": "品牌管理1",
+								"selected": 0
+							},
+							{
+								"id": "101",
+								"title": "品牌管理2",
+								"pId": "49",
+								"order": "0",
+								"name": "品牌管理2",
+								"selected": 0
+							},
+							{
+								"id": "105",
+								"title": "品牌管理3",
+								"pId": "49",
+								"order": "0",
+								"name": "品牌管理3",
+								"selected": 0
+							}
+						]
+					},
+					{
+						"id": "60",
+						"title": "餐企信息",
+						"pId": "48",
+						"order": "3",
+						"name": "餐企信息",
+						"selected": 0,
+						"children": [{
+								"id": "102",
+								"title": "餐企信息1",
+								"pId": "60",
+								"order": "0",
+								"name": "餐企信息1",
+								"selected": 0
+							},
+							{
+								"id": "103",
+								"title": "餐企信息2",
+								"pId": "60",
+								"order": "0",
+								"name": "餐企信息2",
+								"selected": 0
+							},
+							{
+								"id": "104",
+								"title": "餐企信息3",
+								"pId": "60",
+								"order": "0",
+								"name": "餐企信息3",
+								"selected": 0
+							}
+						]
+					},
+					{
+						"id": "63",
+						"title": "项目管理",
+						"pId": "48",
+						"order": "4",
+						"name": "项目管理",
+						"selected": 0,
+						"children": [{
+							"id": "106",
+							"title": "项目管理1",
+							"pId": "63",
+							"order": "0",
+							"name": "项目管理1",
+							"selected": 0
+						}]
+					}
+				]
+			},
+			{
+				"id": "55",
+				"title": "资金方管理",
+				"pId": "0",
+				"order": "7",
+				"name": "资金方管理",
+				"selected": 0,
+				"children": [{
+						"id": "61",
+						"title": "资金方信息",
+						"pId": "55",
+						"order": "6",
+						"name": "资金方信息",
+						"selected": 0
+					},
+					{
+						"id": "84",
+						"title": "项目管理",
+						"pId": "55",
+						"order": "2",
+						"name": "项目管理",
+						"selected": 0
+					}
+				]
+			},
+			{
+				"id": "64",
+				"title": "风控中心",
+				"pId": "0",
+				"order": "10",
+				"name": "风控中心",
+				"selected": 0,
+				"children": [{
+					"id": "83",
+					"title": "风控审核",
+					"pId": "64",
+					"order": "2",
+					"name": "风控审核",
+					"selected": 0
+				}]
+			},
+			{
+				"id": "87",
+				"title": "合同管理",
+				"pId": "0",
+				"order": "8",
+				"name": "合同管理",
+				"selected": 0,
+				"children": [{
+					"id": "88",
+					"title": "借款协议",
+					"pId": "87",
+					"order": "0",
+					"name": "借款协议",
+					"selected": 0
+				}]
+			},
+			{
+				"id": "90",
+				"title": "订单中心",
+				"pId": "0",
+				"order": "9",
+				"name": "订单中心",
+				"selected": 0,
+				"children": [{
+					"id": "91",
+					"title": "服务费订单",
+					"pId": "90",
+					"order": "0",
+					"name": "服务费订单",
+					"selected": 0
+				}]
+			},
+			{
+				"id": "92",
+				"title": "财务中心",
+				"pId": "0",
+				"order": "10",
+				"name": "财务中心",
+				"selected": 0,
+				"children": [{
+					"id": "93",
+					"title": "服务费管理",
+					"pId": "92",
+					"order": "0",
+					"name": "服务费管理",
+					"selected": 0
+				}]
+			}
+
+		];
+		
+		$(document).ready(function() {
+			$.fn.zTree.init($("#tree"), setting, zNodes);
+			document.getElementById("key").value = ""; //清空搜索框中的内容  
+			//绑定事件  
+			key = $("#key");
+			key.bind("focus", focusKey)
+				.bind("blur", blurKey)
+				.bind("propertychange", searchNode) //property(属性)change(改变)的时候，触发事件  
+				.bind("input", searchNode);
+		});
+		var lastValue = "",
+			nodeList = [],
+			fontCss = {};
+		//键盘释放：当输入框的键盘按键被松开时，把查询到的数据结果显示在标签中  
+		function callNumber() {
+			var zTree = $.fn.zTree.getZTreeObj("tree");
+
+			//如果结果有值，则显示比例；如果结果为0，则显示"[0/0]"；如果结果为空，则清空标签框；  
+			if(nodeList.length) {
+				//让结果集里边的第一个获取焦点（主要为了设置背景色），再把焦点返回给搜索框  
+				zTree.selectNode(nodeList[0], false);
+				document.getElementById("key").focus();
+
+				clickCount = 1; //防止重新输入的搜索信息的时候，没有清空上一次记录  
+
+				//显示当前所在的是第一条  
+				document.getElementById("number").innerHTML = "[" + clickCount + "/" + nodeList.length + "]";
+
+			} else if(nodeList.length == 0) {
+				document.getElementById("number").innerHTML = "[0/0]";
+				zTree.cancelSelectedNode(); //取消焦点  
+			}
+
+			//如果输入框中没有搜索内容，则清空标签框  
+			if(document.getElementById("key").value == "") {
+				document.getElementById("number").innerHTML = "";
+				zTree.cancelSelectedNode();
+			}
+		}
+
+		function focusKey(e) {
+			if(key.hasClass("empty")) {
+				key.removeClass("empty");
+			}
+		}
+
+		function blurKey(e) {
+			if(key.get(0).value === "") {
+				key.addClass("empty");
+			}
+		}
+		//搜索节点  
+		function searchNode(e) {
+			var zTree = $.fn.zTree.getZTreeObj("tree");
+			var value = $.trim(key.get(0).value);
+			var keyType = "name";
+
+			if(key.hasClass("empty")) {
+				value = "";
+			}
+			if(lastValue === value) return;
+			lastValue = value;
+			if(value === "") {
+				updateNodes(false);
+				return;
+			};
+			nodeList = zTree.getNodesByParamFuzzy(keyType, value); //调用ztree的模糊查询功能，得到符合条件的节点  
+			updateNodes(true); //更新节点  
+		}
+		//高亮显示被搜索到的节点  
+		function updateNodes(highlight) {
+			var zTree = $.fn.zTree.getZTreeObj("tree");
+			for(var i = 0, l = nodeList.length; i < l; i++) {
+				nodeList[i].highlight = highlight; //高亮显示搜索到的节点(highlight是自己设置的一个属性)  
+				zTree.expandNode(nodeList[i].getParentNode(), true, false, false); //将搜索到的节点的父节点展开  
+				zTree.updateNode(nodeList[i]); //更新节点数据，主要用于该节点显示属性的更新  
+			}
+		}
+
+		//设置颜色  
+		function getFontCss(treeId, treeNode) {
+			return(!!treeNode.highlight) ? {
+				color: "#A60000",
+				"font-weight": "bold"
+			} : {
+				color: "#333",
+				"font-weight": "normal"
+			};
+		}
+
+		//点击向上按钮时，将焦点移向上一条数据  
+		function clickUp() {
+			var zTree = $.fn.zTree.getZTreeObj("tree");
+			//如果焦点已经移动到了最后一条数据上，就返回第一条重新开始，否则继续移动到下一条  
+			
+			if(nodeList.length == 0) {
+				alert("没有搜索结果！");
+				return;
+			} else if(clickCount == 1) {
+//				alert("您已位于第一条记录上！");
+//				return;
+				clickCount = nodeList.length;
+				
+				//让结果集里边的下一个节点获取焦点（主要为了设置背景色），再把焦点返回给搜索框  
+				zTree.selectNode(nodeList[clickCount], false);
+				clickCount++;
+				
+			} else {
+				//让结果集里边的第一个获取焦点（主要为了设置背景色），再把焦点返回给搜索框  
+				zTree.selectNode(nodeList[clickCount], false);
+				clickCount--;
+				console.log(clickCount);
+			}
+			document.getElementById("key").focus();
+			//显示当前所在的是条数  
+			document.getElementById("number").innerHTML = "[" + clickCount + "/" + nodeList.length + "]";
+		}
+		//点击向上按钮时，将焦点移向下一条数据  
+		function clickDown() {
+			var zTree = $.fn.zTree.getZTreeObj("tree");
+			//如果焦点已经移动到了最后一条数据上，则提示用户（或者返回第一条重新开始），否则继续移动到下一条  
+			if(nodeList.length == 0) {
+				alert("没有搜索结果！");
+				return;
+			} else if(nodeList.length == clickCount) {
+//				alert("您已位于最后一条记录上！")
+				clickCount = 0;
+				zTree.selectNode(nodeList[clickCount], false);
+				clickCount++;
+//				return;
+			} else {
+				//让结果集里边的第一个获取焦点（主要为了设置背景色），再把焦点返回给搜索框  
+				zTree.selectNode(nodeList[clickCount], false)
+				clickCount++;
+				console.log(clickCount);
+			}
+			document.getElementById("key").focus();
+			//显示当前所在的条数  
+			document.getElementById("number").innerHTML = "[" + clickCount + "/" + nodeList.length + "]";
+		}
+	</script>
+
+</html>

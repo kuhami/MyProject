@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  		<meta charset="utf-8">
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <style type="text/css">
+  	#red{
+  		color: red;
+  	}
+  </style>
+  <body>
+    <div id="example"></div>
+    <ul class="example">
+    			<li></li>
+    </ul>
+    <script type="text/babel">
+//  	React 允许将代码封装成组件（component），然后像插入普通 HTML 标签一样，在网页中插入这个组件。React.createClass 方法就用于生成一个组件类
+      var HelloMessage = React.createClass({
+        render: function() {
+          return <h1 id="red">Hello {this.props.name} <p>{this.props.id}</p></h1>;
+        }
+      });
+
+      ReactDOM.render(
+        <HelloMessage name="John1" id="1" />,
+        document.getElementById('example')
+      );
+      
+      var Li = React.createClass({
+      		render:function(){
+      			for(var i=0; i<6;i++){
+      				return <li>我的名字是 {this.props.name}</li>;
+      			}
+      			
+      		}
+      });
+      
+    		
+      ReactDOM.render(
+        <Li name="John1" id="1" />,
+        document.getElementsByClassName('example')[0]
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"   
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>简单鼠标拖拽</title>
+		<style type="text/css">
+			#dray {
+				position: absolute;
+				left: 0;
+				top: 0;
+				
+				
+				
+			}
+			
+			#box {
+				
+				margin-left: 500px;
+				margin-top: 200px;
+				
+			}
+		</style>
+	</head>
+	<script src="z-tree/js/jquery-1.4.4.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<body>
+		<img id="dray" src="img/blue_1.png" id="1"/>
+		<img id="box" src="img/hui_1.png" id="2"/>
+		<script type="text/javascript">
+			$(function() {
+				var dv = document.getElementById("dray");
+				var d = document,
+					x, y;
+				dv.onselectstart = function() {
+					return false;
+				};
+				dv.onmousedown = function(e) {
+					e = e || window.event;
+					x = e.clientX - dv.offsetLeft;
+					y = e.clientY - dv.offsetTop;
+					d.onmousemove = function(e) {
+						e = e || window.event;
+						var el = e.clientX - x;
+						var et = e.clientY - y;
+						dv.style.left = el + "px";
+						dv.style.top = et + "px";
+						checkDvPosition(el, et);
+					};
+					
+				};
+			})
+
+			function checkDvPosition(ol, ot) {
+				var b = document.getElementById("box");
+				var l = b.offsetLeft;
+				var t = b.offsetTop;
+
+				if(ol > l && ot > t && ol < l + 100 && ot < t + 100) {
+					b.style.backgroundColor = "blue";
+					console.log('success');
+					document.onmouseup = function() {
+						document.onmousemove = null;
+						
+					};
+				} else {
+					b.style.backgroundColor = "green";
+					console.log('失败');
+					document.onmouseup = function() {
+						document.onmousemove = null;
+						document.getElementById("dray").style.left = "0px";
+						document.getElementById("dray").style.top ="0px";
+					};
+				}
+			}
+		</script>
+	</body>
+
+</html>

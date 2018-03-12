@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+
+	<img src="http://i.xmebank.com/upload1/2017/11/14/20171114151617_iebyaq.jpg" height="100%" style="width: 300px;height: 300px;" alt="">
+	</body>
+	<script type="text/javascript">
+		var arr = new Array()
+		for(var j = 0; j < 3; j++) {
+
+			for(var i = 0; i < 1; i++) {
+				console.log(arr.push({
+					"name": "" + 1 + "",
+					"name1": "" + 2 + "",
+					"name2": "" + 3 + ""
+				}))
+			}
+
+		}
+		console.log(arr)
+		console.log(JSON.stringify(arr))
+
+		//2017-05-10转化为day 
+		var time1 = '2017-05-10';
+		var time2 = '2017-05-10';
+		time1 = new Date(time1).getTime();
+		time2 = new Date(time2).getTime();
+		var time = (time2 - time1) / 60 / 60 / 1000 / 24;
+		if(time > 0) {
+
+			console.log(time)
+		}
+
+		//			 $.post('index.php?r=mwee/get-dzdp-api',"上海",function(res){
+		//     console.log(res);
+		//
+		//          },'json');
+
+		//          var testReg = /^(((\d|[1-9]\d)(\.\d{1,2})?)|100|100.0|100.00)$/;
+		//		if(testReg.test(0) == true) {
+		//              alert(1);
+		//      }
+
+//		Array.prototype.indexOf = function(val) {
+//			for(var i = 0; i < this.length; i++) {
+//				if(this[i] == val) return i;
+//			}
+//			return -1;
+//		};
+		Array.prototype.remove = function(val) {
+			var index = this.indexOf(val);
+			if(index > -1) {
+				this.splice(index, 1);
+			}
+		};
+		var emp = ['abs', 'dsf', 'sdf', 'fd'];
+		emp.remove('fd');
+		console.log(emp)
+		
+		var b=undefined;
+		document.write((b == undefined) ? a='' : a='12');
+		
+		
+		var ptn2=/[^_IOZSVa-z\W]{2}\d{6}[^_IOZSVa-z\W]{10}/g;
+		var date1 = '91350100M000100Y43';
+		console.log(ptn2.test(date1));
+		
+		
+		var Arrer = [[1,1],[2,2],[3,3]];
+		Arrer.push([1,2,2]);
+		console.log(Arrer);
+		console.log(JSON.stringify(Arrer))
+		var arr1 = new Array()
+		for(var j = 0; j < 3; j++) {
+
+			for(var i = 0; i < 1; i++) {
+				console.log(arr1.push({
+					"name": "" + 1 + "",
+					"name1": "" + 2 + "",
+					"name2": "" + 3 + ""
+				}))
+			}
+
+		}
+		console.log(arr1)
+		console.log(JSON.stringify(arr1))
+		
+		
+		var a=3;
+		var d = (a==1) ? '待审核':(a==2) ? '待审核1':'待审核2';
+		
+		
+	console.log(d)
+	</script>
+
+</html>
