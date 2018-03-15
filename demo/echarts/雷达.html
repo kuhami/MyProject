@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>雷达图</title>
+    </head>
+    <body>
+        <div id="pie" style="width: 500px;height:400px;"></div>
+    </body>
+    <style>
+
+    </style>
+    <script type="text/javascript" src="js/echarts.js" ></script>
+    <script type="text/javascript" src="../js/jquery-2.2.4.min.js" ></script>
+    <script>
+        var myChart = echarts.init(document.getElementById('pie'));
+
+        option = {
+            title: {
+                text: '雷达图'
+            },
+            tooltip: {
+
+            },
+            radar: {
+                nameGap : 15, // 图中工艺等字距离图的距离
+                center:['50%','50%'], // 图的位置
+                // shape: 'circle',
+                name: {
+                    textStyle: {
+                        color: '#fff',
+                        backgroundColor: '#999',
+                        borderRadius: 3,
+                        fontSize:16,
+                        padding: [3, 5]
+                    },
+                    show: true
+                },
+                indicator: [
+                    { name: '火爆度', max: 100},
+                    { name: '资料完备度', max: 100},
+                    { name: '征信&保障', max: 100},
+                    { name: '数据透明度', max: 100},
+                    { name: '规模性', max: 100}
+                ],
+
+            },
+            series: [{
+                name: '预算 vs 开销（Budget vs spending）',
+                type: 'radar',
+                itemStyle: {
+                    normal: {
+                        color : "red", // 图表中各个图区域的边框线拐点颜色
+                        lineStyle: {
+                            color:"#fff" // 图表中各个图区域的边框线颜色
+                        },
+                        areaStyle: {
+                            type: 'default'
+                        }
+                    }
+                },
+                data : [
+                    {
+                        value : [80, 30, 50, 70, 60, 50],
+                        itemStyle: {
+                            normal: {
+                                areaStyle: {
+                                    type: 'default',
+                                    opacity: 0.8, // 图表中各个图区域的透明度
+                                    color: "#FF6600" // 图表中各个图区域的颜色
+                                }
+                            }
+                        },
+                        name : '整体预览'
+                    }
+                ]
+            }]
+        };
+
+        myChart.setOption(option);
+    </script>
+</html>
