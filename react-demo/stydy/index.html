@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../build/jquery.min.js"></script>
+    <style>
+      h1{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="example"></div>
+    <div class="example"></div>
+    <div id="example"></div>
+    <script type="text/babel">
+        function formatName(user) {
+            return user.firstName + ' ' + user.lastName;
+        }
+
+        const user = {
+            firstName: 'Harper',
+            lastName: 'Perez'
+        };
+
+        const element = (
+            <div>
+              <h1 className="demo" myIndex="12">
+                  Hello,{formatName(user)}!
+                </h1>
+              <i>我是动态添加标签：{formatName(user)}</i>
+            </div>
+        );
+
+
+
+        for (let i=0; i<2; i++){
+            ReactDOM.render(
+                element,
+                document.getElementsByClassName("example")[i]
+            );
+        }
+
+        const element1 = (
+                  <h1 className="demo" myIndex="12">
+                    我是id example
+                  </h1>
+        );
+
+        ReactDOM.render(
+            element1,
+            document.getElementById("example")
+        );
+
+        console.log($("#example").text());
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>组件 & Props</title>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+    <script src="../build/jquery.min.js"></script>
+    <style>
+        h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="example"></div>
+<div class="example"></div>
+<div id="example"></div>
+<script type="text/babel">
+
+    $(function () {
+    //当React遇到的元素是用户自定义的组件，它会将JSX属性作为单个对象传递给该组件,这个对象称之为“props”。
+        function Welcome(props) {
+            return <h1>Hello, {props.name}</h1>;
+        }
+
+        function App() {
+            return (
+                    <div tabIndex="12">
+                        <Welcome name="Sara" />
+                        <Welcome name="Cahal" />
+                        <Welcome name="Edite" />
+                    </div>
+            );
+        }
+
+        ReactDOM.render(
+            <App/>,
+            document.getElementById('example')
+        );
+
+    });
+</script>
+</body>
+</html>
