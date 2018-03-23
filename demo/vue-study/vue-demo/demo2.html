@@ -16,8 +16,9 @@
       is="todo-item"
       v-for="(todo, index) in todos"
       v-bind:title="todo"
-      v-on:remove="todos.splice(index, 1)"
-    ></li>
+      v-on:remove="todos.splice(index, 1)">
+
+    </li>
   </ul>
 </div>
 <script src="../js/vue.js"></script>

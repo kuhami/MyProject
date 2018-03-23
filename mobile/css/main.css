@@ -1,0 +1,378 @@
+@charset "utf-8";
+* {
+    font-size: 0.5rem;
+}
+
+.ruler_new {
+    position: absolute;
+    width: 4rem;
+    top: -1.5rem;
+    left: 1rem;
+}
+
+.body {
+    float: left;
+    width: 100%;
+    background-image: url(../images/receiveGift/bg.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.bodyRC {
+    background-image: url(../images/rateCut/bg.png);
+}
+
+.clickRece {
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    top: 11rem;
+    left: 2rem;
+}
+
+.clickGet {
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    top: 11rem;
+    left: 8.5rem;
+}
+
+.share {
+    position: absolute;
+    width: 80%;
+    margin-left: 10%;
+    top: 14rem;
+    background-image: url(../images/cardD.png);
+    background-size: 100% 100%;
+}
+
+.shareClick {
+    position: absolute;
+    width: 4rem;
+    top: 3.5rem;
+    left: 4.5rem;
+}
+
+.vcode {
+    position: absolute;
+    width: 7rem;
+    top: 20rem;
+    left: 4.5rem;
+    z-index: 2;
+}
+
+.vcode .qrcode {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #860909;
+    border-radius: 8px;
+}
+
+.vcode .logo {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 5px;
+}
+
+.inputClass {
+    width: 10.8rem;
+    height: 1.8rem;
+    background-color: #FFF;
+    position: absolute;
+    border: solid rgb(134, 9, 9) 1px;
+    border-radius: 5px;
+    left: 2.8rem;
+}
+
+.inputClass > * {
+    float: left;
+}
+
+.inputClass > span {
+    color: rgb(134, 9, 9);
+    font-weight: bold;
+    margin-left: 0.5rem;
+    line-height: 1.8rem;
+}
+
+.inputClass > input {
+    margin-left: 0.2rem;
+    margin-top: 0.1rem;
+    height: 1.6rem;
+    width: 7.5rem;
+}
+
+.nameBox {
+    top: 9.5rem;
+}
+
+.phoneBox {
+    top: 11.5rem;
+}
+
+.codeBox {
+    top: 13.5rem;
+}
+
+.codeBox > input {
+    width: 3.6rem;
+}
+
+#setCode {
+    margin-left: 0.5rem;
+    float: left;
+    height: 1.2rem;
+    margin-top: 0.3rem;
+    width: 3.5rem;
+    background-color: rgb(255, 135, 12);
+    color: white;
+    line-height: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.messageText {
+    width: 100%;
+    text-align: center;
+    top: 15.5rem;
+    position: absolute;
+    color: rgb(134, 9, 9);
+}
+
+.submit {
+    position: absolute;
+    width: 10.8rem;
+    height: 1.8rem;
+    top: 16.5rem;
+    left: 50%;
+    margin-left: -5.4rem;
+}
+
+#send {
+    top: 18.6rem;
+}
+
+.ruleClick {
+    position: absolute;
+    text-align: center;
+    font-size: 0.6rem;
+    top: 20.5rem;
+    left: 5.5rem;
+    line-height: 1.5rem;
+    height: 1.5rem;
+    width: 5rem;
+    color: rgb(255, 48, 58);
+    text-decoration: underline;
+}
+
+.tcode {
+    position: absolute;
+    width: 5rem;
+    top: 22rem;
+    left: 5.5rem;
+}
+
+.tcode .qrcode {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #860909;
+    border-radius: 5px;
+}
+
+.tcode .logo {
+    position: absolute;
+    top: 1.75rem;
+    left: 1.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 5px;
+}
+
+.blackBG {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    max-width: 640px;
+
+    display: none;
+}
+
+.ruler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 14rem;
+    height: 15rem;
+    margin: auto;
+    border-radius: 15px;
+    background-color: #FFF;
+}
+
+.ruler > span {
+    float: left;
+    width: 100%;
+    font-size: 0.8rem;
+    text-align: center;
+    line-height: 3rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: rgb(101, 72, 15);
+}
+
+.ruler > ul {
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    position: relative;
+}
+
+.ruler > ul > li {
+    float: left;
+    width: 100%;
+    margin-bottom: 0.3rem;
+    font-size: 0.6rem;
+    color: #65480f;
+}
+
+.cancel {
+    position: absolute;
+    width: 1.5rem;
+    right: -0.5rem;
+    top: -0.5rem;
+    z-index: 15;
+}
+
+.jiantou {
+    width: 3rem;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+}
+
+.shareText {
+    font-size: 0.8rem;
+    position: absolute;
+    right: 1rem;
+    top: 8.5rem;
+    color: #FFF;
+}
+
+.textBox {
+    position: absolute;
+    left: 3.5rem;
+    top: 12rem;
+    width: 10rem;
+}
+
+.textBox > span {
+    float: left;
+    width: 100%;
+    height: 1.6rem;
+}
+
+.textBox span {
+    color: #000;
+    font-size: 0.7rem;
+}
+
+.showA {
+    display: none;
+}
+
+.showB {
+    display: none;
+}
+
+.shareText {
+    position: absolute;
+    top: 15rem;
+    left: 5.5rem;
+    font-size: 0.6rem;
+    color: #860909;
+    font-weight: bold;
+    width: 5.5rem;
+    text-align: center;
+}
+
+.confirmInfo .alert_content {
+    height: 8rem;
+}
+
+.confirmInfo .alert_content p {
+    margin-bottom: 0.8rem;
+}
+
+.confirmInfo button {
+    width: 4.5rem;
+    left: 1rem;
+    margin-left: 0;
+}
+
+.confirmInfo button + button {
+    left: 6.5rem;
+}
+
+.confirmInfo .title {
+    color: rgb(101,72,15);
+}
+
+.confirmInfo button {
+    background-image:url(../images/submit_R.png);
+    background-size:100% 100%;
+    background-color:#FFF;
+    top: 5.5rem;
+}
+.confirmInfo .btYes{
+    background-image:url(../images/submit_L.png);
+}
+
+.blackBox {
+    position: fixed;
+    width: 100%;
+    height: 28.4rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.vcode_sub {
+    float: left;
+    width: 80%;
+    background-color: rgb(255, 231, 34);
+    margin-left: 10%;
+    margin-top: 5rem;
+    padding-bottom: 1rem;
+}
+
+.vcode_sub > div {
+    float: left;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    font-size: 0.6rem;
+    word-break: break-all;
+    color: #a52a2a;
+}
+
+.vcode_sub > .mt_1rem {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+}
+
+.vcode_sub > img {
+    float: left;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

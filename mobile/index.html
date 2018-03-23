@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common_gift.css"/>
+
+</head>
+<body>
+<div class="blackBox none">
+    <div class="vcode_sub">
+        <div class="mt_1rem">抱歉，需成为“平安好贷”粉丝，才能生成专属二维码</div>
+        <img src="images/vcode_sub.jpg"/>
+        <div>长按识别二维码，</div>
+        <div>马上生成二维码。</div>
+    </div>
+</div>
+
+<div class="body bodyRC" style="display:none">
+    <div class="inputClass nameBox showA">
+        <span>姓&nbsp;&nbsp;&nbsp;名：</span>
+        <input id="nameInput" type="text"/>
+    </div>
+    <div class="inputClass phoneBox showA">
+        <span>手机号：</span>
+        <input id="phone" type="tel" oninput="if(value.length>11)value=value.slice(0,11)"/>
+    </div>
+    <div class="inputClass codeBox showA">
+        <span>验证码：</span>
+        <input id="vcodeInput" type="text"/>
+        <div id="setCode" otype="button" otitle="注册-获取验证码">获取验证码</div>
+    </div>
+
+    <div class="textBox showB">
+        <span>您的姓名：<span id="showbName">112233</span></span>
+        <span>您的手机号：<span id="showbPhone">15800699520</span></span>
+    </div>
+    <div class="messageText">每个手机仅能领取一份哦</div>
+
+    <img class="submit" id="submit" src="images/rateCut/sub2.png" otype="button" otitle="首页-领取红包"/>
+    <img class="submit" id="send" src="images/rateCut/sub1.png" otype="button" otitle="首页-分享好友 "/>
+    <div class="ruleClick" otype="button" otitle="首页-活动规则">活动规则</div>
+    <div class="tcode">
+        <img src="images/rateCut/tcode.png" class="qrcode" otype="button" otitle="首页-识别二维码"/>
+        <img src="images/logo.jpg" class="logo" alt="">
+    </div>
+</div>
+
+<div class="blackBG rulerBG">
+    <div class="ruler">
+        <img class="ruler_new" src="images/ruler_new.png"/>
+        <span>-活动介绍-</span>
+        <ul>
+            <li>1.为使红包正常发放，请填写正确的手机号码；</li>
+            <li>2.本月领取免息红包且使用，并于次月放款成功，即可获得30元免息红包</li>
+            <li>3.红包将以万里通积分形式于30个工作日内发放至您的万里通账户，您可下载“壹钱包”APP，使用该积分；</li>
+            <li>4.信息仅用于为您提供更好的贷款服务，绝不外泄。</li>
+            <li>5.本活动最终解释权归属官方微信平安好贷所有</li>
+        </ul>
+        <img class="cancel" src="images/rateCut/cancel.png">
+    </div>
+
+</div>
+
+<!--<div class="blackBG fenxiang">-->
+<!--<img class="jiantou" src="images/receiveGift/share.png"/>-->
+<!--<span class="shareText">点击此处分享</span>-->
+<!--</div>-->
+
+<!--alert提示框-->
+<div class="alert_window  common_cover alert_window_p none">
+    <div class="alert_content common_content">
+        <h6 class="title">温馨提示</h6>
+        <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+        <button>关闭</button>
+    </div>
+</div>
+<!--loading-->
+<div class="pageLoading common_cover none">
+    <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!--分享到朋友圈-->
+<div class="share_friend_circle none">
+    <img src="images/share_new.png" class="share_arrow" style="width:12rem;" alt="">
+    <div class="friend_circle_area none">
+        <i class="close"></i>
+        <p class="title">朋友圈分享请通过：</p>
+        <p class="point_p">&nbsp;1.点击右上角的&nbsp;<i class="point"></i>&nbsp;按钮</p>
+        <p>&nbsp;2.选择“分享到朋友圈”</p>
+        <img src="images/share_friend_module.png" class="share_friend_module" alt="">
+        <div class="confirm_submit">确定</div>
+    </div>
+</div>
+<!--页面标识-->
+<p id="broker-page-rate_cut" class="none">broker-page-rate_cut</p>
+</body>
+<script src="../../general/jquery-1.11.1.min.js"></script>
+<script src="../../general/gather-data.js"></script>
+<script src="../../general/webtrends.js"></script>
+<script src="../../general/jweixin-1.0.0.js"></script>
+<script src="../../general/foundation_tools.js"></script>
+<script src="../../general/user_survey.js"></script>
+<script src="../../app/config.js"></script>
+
+<script src="../js/common.js"></script>
+<script src="../js/resize.js"></script>
+<script src="../../platform/ucp/share.js"></script>
+<script src="../../platform/ucp/platform.js"></script>
+<script src="../../general/spread.js"></script>
+<script src="../../general/leader.js"></script>
+<script src="../../general/recommend.js"></script>
+<script src="js/gift_list_data.js"></script>
+
+<script src="js/constant.js"></script>
+<script src="js/proData.js"></script>
+<script src="js/doShare.js"></script>
+<script src="js/rc_main.js"></script>
+</html>

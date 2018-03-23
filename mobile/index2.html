@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0,maximum-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="fotmat-detection" content="telephone=no">
+    <meta name="Exit_Page" content="1" />
+    <link rel="stylesheet" href="css/mobile2.css" />
+    <link rel="stylesheet" href="css/index3.css">
+    <title>平安好贷-贷款服务</title>
+    <style>
+        .pro_box {
+            margin-bottom: 0.6rem;
+            margin-top: 0.2rem;
+            font-size: 0.8rem;
+        }
+
+        .pai_check {
+            left: 1%;
+            width: 5.5%;
+            height: 0.9rem;
+        }
+        .pro_but{
+            color: #ff870c;
+        }
+        .tan3{
+            display: block;
+        }
+        .submit_help{
+            color: #ff870c;
+            font-size: 0.9rem;
+            width: 100%;
+            text-align: center;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        .tan_p{
+            text-indent:2em;
+        }
+        .tan_b{
+            text-indent:2em;
+        }
+        .mq_error{
+            color: red;
+            font-size: 0.8rem;
+            width: 100%;
+            text-align: center;
+            margin-top: 0.5rem;
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+<div class="top">
+    <img src="img/1.1.1.png" alt="" />
+</div>
+<div class="banner">
+    <img src="img/Banner_new.jpg" alt="" />
+</div>
+<div class="gw_btn2 fix" style="height:3.04rem;" otype="button" otitle="wxyds.clickDial">
+    <img src="img/Phone-On.gif" alt="" class="Phone-On fl">
+    <a href="tel:4000317265" class="link_m fr">
+        <h5 class="gw_phone">点击拨打&nbsp;400-031-7265</h5>
+    </a>
+</div>
+<form class="form-group" method="post" id="orderInfoForm">
+    <input type="hidden" name="mediaSourceId" id="mediaSource" value="ZTXYD-weixin-YDS" />
+    <input type="hidden" name="innerMedia" id="innerMedia" />
+    <input type="hidden" name="lpPage" id="lpPage" />
+    <input type="hidden" name="formCode" value="YDS" id="formCode" />
+    <input type="hidden" name="isDirectForm" value="N" id="isDirectForm" />
+    <input type="hidden" name="pageType" value="3" id="pageType" />
+    <input type="hidden" name="campaignCode" value="XX_CAMP_1010WZ" id="campaignCode" />
+    <input type="hidden" name="campaignName" value="1010直通网站" id="campaignName" />
+    <input type="hidden" value="" id="sourceType" name="sourceType"/>
+    <input type="hidden" value="Y" id="smsAuthor" name="smsAuthor" />
+    <input type="hidden" value="3" id="custSrc" name="custSrc" />
+    <input type="hidden" value="" id="idMediaSourceSence" name="idMediaSourceSence" />
+</form>
+<div class="form_tit">快速免费在线申请</div>
+<div class="sec_box">
+    <div class="sanjiao_new">
+        <img src="img/sanjiao.png" alt="" />
+    </div>
+    <section class="form_new">
+        <div class="formcon">
+            <div class="dixian" otype="button" otitle="wxyds.nameInput">
+                <div class="rowcon"><span>姓名</span>
+                    <input type="text" maxlength="10" value="" id="name" placeholder="请输入">
+                </div>
+            </div>
+            <div class="dixian" otype="button" otitle="wxyds.mobileInput">
+                <div class="rowcon addrowcon"><span>手机</span>
+                    <input type="text" maxlength="11" value="" id="tel" placeholder="请输入">
+                </div>
+            </div>
+
+            <!--
+            <div class="dixian" id="sendpic" style="display:none"" >
+                <div class="rowcon addrowcon">
+                    <span>图片验证码</span>
+                    <input type="text" maxlength="4" value="" id="code"class="code" placeholder="请输入" />
+
+                    <div class="code-btn fr pic_code">
+                        <img id="imgCode" src="/paic/common/vcode.do?t="+Date()  />
+                    </div>
+                    <div class="yiduan_span" onclick="inv.getImgCode('imgCode')">
+                        看不清
+                        <br /> 换一张
+                    </div>
+                </div>
+            </div>
+            -->
+
+            <div class="dixian" id="sendsms" style="display:none">
+                <div class="rowcon addrowcon">
+                    <span>短信验证码</span>
+                    <input type="text" maxlength="6" id="smsCode" value="" class="code" placeholder="请输入" />
+                    <input type="button" id="code-btn" class="code-btn fr code_b" value="获取验证码" />
+                </div>
+                <div class="rowcon addrowcon">
+                    <input type="button" id="code-confirm" class="code-btn fr code_b" value="确认" />
+                </div>
+            </div>
+            <div class="juzhong">
+                <div class="person">
+                    <div class="people fl" data-value="1" otype="button" otitle="wxyds.gentleman">
+                        <img src="img/draw3_zxp.png"/>
+                        <p style="display: block;width: 5rem;">先生</p>
+                    </div>
+                    <div class="people fr" data-value="2" otype="button" otitle="wxyds.lady"><img src="img/ykong3.png" />
+                        <p style="display: block;width: 5rem;">女士</p>
+                    </div>
+                </div>
+            </div>
+            <div class="juzhong rili">
+                <div class="pro_box" otype="button" otitle="wxyds.alreadyRead">
+                    <div class="pai_check pai_checked"></div> 已阅读并同意 <span class="pro_but" otype="button" otitle="wxyds.userAgreement">《平安好贷用户服务协议》</span>
+                </div>
+                <p class="submit" value="提交" id="sumbitBtn" otype="button" otitle="new.yds.firstbtn" >马上贷款</p>
+                <div id="tip_div" style="position: absolute; top: -1.3rem; width: 100%; display: none;">
+                    <div style="text-align:center;">
+                        <img src="img/20151116register-warn.png" style="width:0.5625rem;height:0.5625rem;display:none;">
+                        <span style="vertical-align:middle;text-align:center;line-height:0.9rem;font-size:0.65rem;color:red;"></span>
+                    </div>
+                </div>
+                <div class="submit_help">请先阅读用户协议哦！</div>
+            </div>
+            <div class="dixian" style="border-bottom: none;">
+                <div class="gw_wap_box fix">
+                    <div class="gw_wap_1 fl">
+                        <div class="img_box">
+                            <img src="img/1.25.jpg" alt="" style="height:2.4rem;">
+                        </div>
+                        <div class="text2">如何<span style="color:#f45a26 ;">关注</span>微信长按识别二维码&gt;&gt;微信扫码关注</div>
+
+                    </div>
+                    <img src="img/er.png" alt="" class="erweicode fl">
+                    <div class="gw_wap_2 fl">
+                        <div class="ewmtitle">
+                            <div class="noertit1">
+                                <p>了解贷款条件</p>
+                            </div>
+                            <div class="noertit2">
+                                <p>贷款产品介绍</p>
+                            </div>
+                            <div class="noertit3">
+                                <p>计算贷款利息</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</div>
+<div class="notice">
+    <div class="juzhong bordernone">
+        <p>中国平安官方贷款渠道，不产生任何额外费用！</p>
+        <div class="checkIt">
+            <p>中国平安承诺将严格保密用户信息</p>
+        </div>
+    </div>
+</div>
+<div class="toast" id="toast">
+    <!-- <span>操作成功，正在跳转...</span> -->
+</div>
+<!--手机验证码弹窗start-->
+<div class="mq_black dm"></div>
+<div class="mq_toast dm" id="tcyzm">
+    <div class="to_tit" >为了确保您的信息安全，请输入验证码</div>
+    <div class="to_detail">验证成功后，即可完善个人信息以便加快贷款进程~将有专属客服经理为您服务哦!</div>
+
+    <div class="mq_main fix">
+        <div class="mq_box1 fl" otype="button" otitle="wxyds.verificationCodeInput">
+            <input type="text" class="mq_inp" id="mq_inp" maxlength="6" placeholder="请输入验证码" />
+        </div>
+        <div class="mq_box2 fr" otype="button" otitle="wxyds.getCode">
+            <input type="button" id="mq_code" class="mq_code" value="获取验证码" />
+        </div>
+    </div>
+    <div class="mq_error" id="showSmsError">验证码不正确</div>
+    <div class="to_but" otype="button" otitle="wxyds.confirm">确定</div>
+</div>
+<div class="mq_close dm"><img src="img/mq_close.png" alt="" /></div>
+<!--手机验证码弹窗end-->
+
+<!--公共弹窗-->
+<div class="tan_black tan_tag"></div>
+<div class="tan_back tan_tag">
+    <img src="img/tan_back.png" alt="" />
+</div>
+<div class="tan_bg tan_tag">
+    <img src="img/tan_bg.png" alt="" />
+</div>
+<div class="tan_text tan_tag" id="showError"></div>
+<!--公共弹窗-->
+
+<!--tan2-->
+<div class="mq_black2 dp"></div>
+<div class="mq_bg2 dp">
+    <img src="img/mq_bg2.png" alt="" />
+</div>
+<div class="mq_bg2 mq_bg2_txt dp" id="showWelCome">平安好贷欢迎您再次回来，请核对您的历史信息！如有变更，还请及时更正哦~</div>
+<!--tan2-->
+
+<!---------------------服务协议------------------------------->
+<div class="tan_black2 tan2"></div>
+<div class="tan_back2 tan2">
+    <img src="img/tan_back.png" alt="" />
+</div>
+<div class="tan_bg2 tan2">
+    <div class="tan_title">平安好贷用户贷款协议</div>
+    <div class="tan_title_help">欢迎您使用平安好贷服务！</div>
+    <div class="tan_txt">
+        <p> “平安好贷”是平安集团旗下为符合一定条件的用户提供贷款产品适配服务的品牌。</p>
+        <p>下述“平安好贷”的表述，既包括指代平安好贷服务，也包括指代平安好贷服务的提供者。</p>
+        <p>“用户”或“会员”是指使用平安好贷相关服务的使用人，在本协议中更多地称为“您”。</p>
+        <p>在使用平安好贷服务之前，请您务必审慎阅读、充分理解《平安好贷服务协议》（以下简称“本协议”），特别是限制或免除责任的相应条款、法律适用和争议解决条款。限制或免除责任的相应条款以加粗形式提示您注意。您勾选“阅读并同意本协议”后，则表示您已阅读并同意本协议的全部内容。</p>
+        <p>您同意，平安好贷有权根据需要不时地修改本协议或根据本协议制定、修改各类配套协议或具体规则，修改一经发布即告生效，并立即代替原来的条款，请您关注并及时查看本协议的相关变更。如果您不接受修改后的条款，可立即停止使用该等修订条款所对应的服务，如您继续使用平安好贷服务即视为接受修改后的条款。</p>
+    </div>
+    <div class="tan_title_help">第一条&nbsp;本协议的范围</div>
+    <div class="tan_txt">
+        <p>本协议是您与平安好贷服务的提供者关于您使用平安好贷服务（包括但不限于PC端、移动端设备等方式使用平安好贷服务）所订立的协议。</p>
+    </div>
+    <div class="tan_title_help">第二条&nbsp;服务内容</div>
+    <div class="tan_txt">
+        <p>您知悉并同意，平安好贷为提供第三方贷款产品的适配服务，将定期或不定期的为您推送服务信息，推送方式包括但不限于电话、短信、电子邮件、微信等，平安好贷对提供的服务拥有最终解释权。</p>
+    </div>
+    <div class="tan_title_help">第三条&nbsp;服务的变更、中断或终止</div>
+    <div class="tan_txt">
+        <p class="tan_p">3.1、您理解，平安好贷需要定期或不定期地对提供服务的平台（如网站、微信公众号等）或相关的设备进行检修、维护、系统升级、改造等。如因此类情况而造成服务在合理时间内的中断，平安好贷无需为此承担任何责任。但平安好贷应尽可能事先进行通告。</p>
+        <p class="tan_p">3.2、如发生下列任何一种情形，平安好贷有权不经通知而中断或终止向您提供本协议项下的服务而无需对您或任何第三方承担任何责任：</p>
+        <p class="tan_p_m">（1）您提供的个人资料不真实或有错误；</p>
+        <p class="tan_p_m">（2）您违反相关法律法规或本协议的约定；</p>
+        <p class="tan_p_m">（3）按照法律规定或主管部门的要求；</p>
+        <p class="tan_p_m">（4）出于安全的原因或其他必要的情形。</p>
+        <p class="tan_p">3.3、您应当理解并同意，如果您的服务被终止，平安好贷可以从服务器上永久地删除您的数据,但法律法规另有规定的除外。服务终止后，平安好贷没有义务向您返还数据。</p>
+        <p class="tan_p">3.4、您应当理解并同意，您使用平安好贷服务需自行准备有关的终端设备（如计算机），并承担所需的费用（如电话费、上网费等费用）。您理解并同意，您使用平安好贷服务时会耗用您的终端设备和带宽等资源。</p>
+        <p class="tan_p">3.5、您在使用平安好贷提供的服务时，除遵守本协议约定外，还应遵守第三方和您之间的协议。您、平安好贷、第三方及其他方对可能出现的纠纷在法律规定和约定的范围内各自承担责任。</p>
+    </div>
+    <div class="tan_title_help">第四条&nbsp;免责条款</div>
+    <div class="tan_txt">
+        <p class="tan_b">您理解并同意，平安好贷在以下情况下不承担任何责任（包括但不限于）：</p>
+        <p class="tan_b">4.1、平安好贷不对本服务提供任何形式的保证，包括但不限于本服务符合您的需求，本服务不受干扰、及时提供或免于出错。</p>
+        <p class="tan_b">4.2、平安好贷的合作单位所提供的服务内容及品质由该合作单位自行负责。</p>
+        <p class="tan_b">4.3、平安好贷不保证为向用户提供便利而设置的外部链接的准确性和完整性，同时对于该等外部链接指向的不由平安好贷实际控制的任何网页上的内容，平安好贷不承担任何责任。</p>
+        <p class="tan_b">4.4、对于本协议第三条造成的服务变更、中断或终止，平安好贷不承担任何责任。</p>
+        <p class="tan_b">4.5、因以下情况没有正确执行您提交的操作指令而造成损失的，平安好贷不承担任何责任：</p>
+        <p class="tan_b">（1）指令信息不明、存在乱码或不完整等；</p>
+        <p class="tan_b">（2）您所拥有的产品或服务发生失效、终止等情况；</p>
+        <p class="tan_b">（3）其他平安好贷无过失的情况。</p>
+        <p class="tan_b">4.6、对于您受到计算机病毒、木马或其他恶意程序、黑客攻击所造成的损失平安好贷不承担任何责任。</p>
+        <p class="tan_b">4.7、如果您在共享环境下或在电脑被远程监控的情况下访问平安好贷，由此造成的损失平安好贷不承担任何责任。</p>
+        <p class="tan_b">4.8、平安好贷不允许您冒用他人身份信息，否则，因此产生的法律责任将由您本人承担，给他人造成损失的，您应给予赔偿。</p>
+        <p class="tan_b">4.9、平安好贷用户通过移动通讯设备登录相关网站和使用相关服务，因通讯过程中导致信息的不完整、丢失或被第三方拦截等不可归责于平安好贷的情形，平安好贷不承担任何责任。</p>
+        <p class="tan_b">4.10、因无法预见、无法避免且无法克服的不可抗力事件，导致平安好贷在本协议项下的义务无法履行或无法按时履行，平安好贷在法律允许的范围内免责。</p>
+        <p class="tan_b">4.11、如果平安好贷存在投入使用时的科学技术水平尚不能发现的缺陷，由此造成的损失平安好贷不承担任何责任。</p>
+    </div>
+    <div class="tan_title_help">第五条&nbsp;知识产权声明</div>
+    <div class="tan_txt">
+        <p>5.1、平安好贷在服务中所包含的内容（包括但不限于网页、文字、图片、音频、视频、图表等）及提供服务时所依托软件的著作权、专利权及其他知识产权均归平安好贷及其关联公司所有。平安好贷在本服务中所使用的“中国平安”、“平安好贷”等商业标识，其商标权和相关权利归平安好贷及其关联公司所有。</p>
+        <p>5.2、本服务包含的知识产权均受到法律保护，您若侵犯平安好贷相关知识产权将承担损害赔偿责任。</p>
+    </div>
+    <div class="tan_title_help">第六条&nbsp;用户个人信息的提供、使用及保护</div>
+    <div class="tan_txt">
+        <p>6.1、平安好贷承诺采取严格的信息保护政策，尊重并保护您的个人信息。平安好贷将按照本个人信息保护规则（以下简称“本规则”）收集、使用及共享您的个人信息。本规则包含了我们收集、存储、保护、使用和共享您的个人信息的条款，建议您完整地阅读本规则，以帮助您了解维护个人信息的方式。</p>
+        <p>6.2 、您保证向平安好贷提供的所有信息是真实、完整、准确、合法、有效的，并授权及同意平安好贷及第三方在业务运营中为给您提供服务所需收集、储存和共享您的用户信息，包括但不限于您自行提供的以及平安好贷通过关联公司或第三方机构（包括但不限于中国人民银行个人信用信息基础数据库，合法的征信机构、与征信有关的第三方数据库、公安机关、公积金、社保、税务、民政等，本协议统称为“征信数据机构“）查询或采集的您本人的个人信息（包括但不限于您的姓名、身份证号码、手机号码等个人基本信息、活动信息、位置定位信息、个人信用报告、消费记录、信贷信息、税务信息、通讯方式、信用状况、就业、收入、婚姻等信息），并且您同意并授权平安好贷及第三方共享上述信息，并通过对前述个人信息进行各项识别、验证和筛查，将识别、验证及筛查结果使用于您的贷款相关事项。</p>
+        <p>6.3、如您提供任何错误、虚假、无效或不完整的资料，由此产生的一切责任均由您个人承担。如您提交的信息不完整或不符合法律法规的规定，则您可能无法使用本平台服务或在使用本平台服务的过程中受到限制。</p>
+        <p>6.4、为了给您提供更精准的服务，您进一步同意并授权如下：</p>
+        <p>您同意并授权，平安好贷仅为第三方为您提供贷款服务所需向第三方提供您在平安好贷相关平台中提交的相关信息（含个人基本信息）和您使用平安好贷服务中产生的信息等，第三方仅为贷款服务相关事项的需要而使用前述信息并依据其自行创建的数据分析模型分析前述信息，且第三方有权将分析结果回传给平安好贷，以为您提供更好的服务及使用体验。</p>
+        <p>6.5、您同意并确认，平安好贷提供以上您的信息给第三方、第三方使用和分析您以上信息、第三方将分析结果及您的基本信息回传给平安好贷，并未违反您与平安好贷或您与第三方之间的相关保密义务，且平安好贷、第三方应免予承担任何违约责任或侵权责任。</p>
+    </div>
+    <div class="tan_title_help">第七条&nbsp;对第三方责任的声明</div>
+    <div class="tan_txt">
+        <p>平安好贷因服务需要，可能会将相关网站链接至合作伙伴的网站（统称“第三方网站”）。本《个人信息保护规则》并不适用于第三方网站，因为它们不受平安好贷控制。如果您使用平安好贷提供的链接访问第三方网站，这些网站的运营商可能会收集您的个人信息。平安好贷尽力确保所有链接的第三方网站采用同等的个人信息保护措施，但是平安好贷不对这些第三方网站上的活动、个人信息保护政策或个人信息保护水平承担任何法律或其他责任。</p>
+    </div>
+    <div class="tan_title_help">第八条&nbsp;用户的守法义务</div>
+    <div class="tan_txt">
+        <p>8.1、您使用平安好贷服务时，禁止从事以下行为，平安好贷的系统记录可作为实施该行为的证据：</p>
+        <p>（1）发布、传送、传播、储存危害国家安全统一、破坏社会稳定、违反公序良俗、侮辱、诽谤、淫秽、暴力以及任何违反国家法律法规的内容；</p>
+        <p>（2）发布、传送、传播、储存侵害他人知识产权、商业秘密等合法权利的内容；</p>
+        <p>（3）恶意虚构事实、隐瞒真相以误导、欺骗他人；</p>
+        <p>（4）发布、传送、传播广告信息及垃圾信息；</p>
+        <p>（5）违反任何相关的中国法律、行政法规、规章、条例等其他具有法律效力的规范。</p>
+        <p>8.2、如果您违反了本条约定，相关国家机关或机构可能会对您提起诉讼、罚款或采取其他制裁措施，并要求平安好贷给予协助，造成损害的，您应依法予以赔偿，平安好贷不承担任何责任。</p>
+        <p>8.3、如果平安好贷发现或收到他人举报您发布的信息违反本条约定，平安好贷有权进行独立判断并采取技术手段予以删除、屏蔽或断开链接。同时，平安好贷有权视您的行为性质，采取包括但不限于暂停或终止服务、追究法律责任等措施。</p>
+        <p>8.4、您违反本条约定，导致任何第三方损害的，您应当独立承担责任；平安好贷因此遭受损失的，您也应当一并赔偿。</p>
+    </div>
+    <div class="tan_title_help">第九条&nbsp;其他</div>
+    <div class="tan_txt">
+        <p>9.1、本协议所述关联公司，系指相互之间具有下列关系之一的任何国内或国外的合伙企业、合资企业、公司、分支机构或其他形式的企业和/或实体：</p>
+        <p>（1）直接或间接控制一方；</p>
+        <p>（2）直接或间接接受一方控制；</p>
+        <p>（3）或与一方直接或间接地共同受控于第三方。</p>
+        <p>9.2、本协议所有条款的标题仅为阅读方便，本身并无实际含义，不能作为本协议含义解释的依据。</p>
+        <p>9.3、本协议条款无论因何种原因部分无效或不可执行，其余条款仍有效，对双方具有约束力。</p>
+        <p>9.4、本协议的成立、生效、履行、解释及纠纷解决，适用中华人民共和国大陆地区法律（不含冲突法），如无相关法律规定的，则应参照通用国际商业惯例和/或行业惯例。</p>
+        <p>9.5、您与平安好贷在履行本协议的过程中，如发生争议，应协商解决。协商不成的，均提请上海仲裁委员会按照该会仲裁规则进行仲裁。仲裁裁决是终局的，对双方均有约束力。</p>
+        <p>10、客户信息授权条款</p>
+        <p>1. 您授权平安集团，除法律另有规定之外，将您提供给平安集团的信息、享受平安集团服务产生的信息（包括本申请表签署之前提供和产生的信息）以及平安集团根据本条约定查询、收集的信息，用于平安集团及其因服务必要委托的合作伙伴为本人提供服务、推荐产品、开展市场调查与信息数据分析。</p>
+        <p>2. 您授权平安集团，除法律另有规定之外，基于为您提供更优质服务和产品的目的，向平安集团因服务必要开展合作的伙伴提供、查询、收集您的信息。</p>
+        <p>3. 为确保您信息的安全，平安集团及其合作伙伴对上述信息负有保密义务，并采取各种措施保证信息安全。</p>
+        <p>4. 本条款自本申请表签署时生效，具有独立法律效力，不受合同成立与否及效力状态变化的影响。</p>
+        <p>5. 本条所称“平安集团”是指中国平安保险（集团）股份有限公司及其直接或间接控股的公司，以及中国平安保险（集团）股份有限公司直接或间接作为其单一最大股东的公司。</p>
+    </div>
+</div>
+<!---------------------服务协议------------------------------->
+
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/base64.js"></script>
+<script src="js/index.js"></script>
+<script>
+    $('.pai_check').click(function() {
+        if ($('.pai_check').hasClass('pai_checked')) {
+            $(this).removeClass('pai_checked')
+            $('.submit').css('background-color', '#999999');
+            $('.submit').addClass('disable');
+            $('.submit_help').css('display','block');
+        } else {
+            $(this).addClass('pai_checked')
+            $('.submit').css('background-color', '#ff870c');
+            $('.submit').removeClass('disable');
+            $('.submit_help').css('display','none');
+        }
+    })
+    $('.pro_but').click(function(){
+        $('.tan2').addClass('tan3');
+        $('body').css('overflow','hidden');
+        $('.tan_black2').on('touchstart',function(e){
+            e.preventDefault();
+        })
+    })
+    $('.tan_back2').click(function(){
+        $('.tan2').removeClass('tan3');
+        $('body').css('overflow','auto');
+    })
+</script>
+</body>
+
+</html>
