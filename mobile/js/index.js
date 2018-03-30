@@ -488,15 +488,15 @@ var inv = {
     _inputNameValidator: function () {
         var nameVal = inv.inputName.val();
         if (!nameVal) {
-            inv.toast("濮撳悕鍙兘涓轰腑鏂囷紝涓斾笉鑳芥湁绌烘牸銆�");
+            inv.toast("姓名只能为中文，且不能有空格。");
             inv.inputName.focus();
             return false;
         } else if (nameVal && !(/^([\u4e00-\u9fa5\s]{2})([\u4e00-\u9fa5\s]{0,18}|[. ]{0,36}|[? ]{0,36})?$/.test(nameVal))) {
-            inv.toast("濮撳悕鍙兘涓轰腑鏂囷紝涓斾笉鑳芥湁绌烘牸銆�");
+            inv.toast("姓名只能为中文，且不能有空格。");
             inv.inputName.focus();
             return false;
         } else if (nameVal == '涓嶈' || nameVal == '涓嶇ゥ' || nameVal == '鏈煡' || nameVal == '涓嶇煡閬�' || nameVal == '濮撳悕' || nameVal.indexOf('娴嬭瘯') > -1 || nameVal.indexOf('test') > -1) {
-            inv.toast("璇疯緭鍏ユ纭殑濮撳悕銆�");
+            inv.toast("请输入正确的手机号");
             inv.inputName.focus();
             return false;
         } else {

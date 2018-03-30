@@ -16,7 +16,7 @@
 </div>
 
 <div id="example-2">
-    <simple-counter></simple-counter>
+    <simple-counter name="fade"></simple-counter>
     <simple-counter></simple-counter>
     <simple-counter></simple-counter>
     <simple-counter></simple-counter>
@@ -78,7 +78,8 @@
         methods: {
             incrementCounter: function () {
                 this.counter += 1
-                this.$emit('increment')
+                this.$emit('increment');
+                console.log(this.$emit('increment'));
             }
         },
     })
