@@ -2,9 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>雷达图</title>
 </head>
 <body>
-
+<div id="main" style="width: 400px;height:360px;"></div>
 </body>
+<style>
+
+</style>
+<script type="text/javascript" src="js/echarts.js" ></script>
+<script type="text/javascript" src="../js/jquery-2.2.4.min.js" ></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: '品牌信用额度', //标题文本内容
+        },
+        tooltip: { //弹窗组件
+            formatter: "{a} <br/>{b} : {c}"
+        },
+        series: [{
+            name: '品牌信用额度',
+            type: 'gauge',
+            min: 0,
+            max: 2000,
+            radius: '90%',
+            detail: {formatter:'{value}'},
+            data: [{value: 195, name: '单位/万元'}]
+        }]
+
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+//    setInterval(function(){//把option.series[0].data[0].value的值使用random()方法获取一个随机数
+//        option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+//        myChart.setOption(option, true);
+//    }, 2000);
+</script>
 </html>

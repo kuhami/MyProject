@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'icon-doc';
+  src:  url('/font/document/icon-doc.eot?hq6eqs');
+  src:  url('/font/document/icon-doc.eot?hq6eqs#iefix') format('embedded-opentype'),
+    url('/font/document/icon-doc.ttf?hq6eqs') format('truetype'),
+    url('/font/document/icon-doc.woff?hq6eqs') format('woff'),
+    url('/font/document/icon-doc.svg?hq6eqs#icon-doc') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-document-"], [class*=" icon-document-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icon-doc' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-document-currency:before {
+  content: "\e900";
+  color:#8B96C2;
+}
+.icon-document-excel:before {
+  content: "\e901";
+  color:#64D16F;
+}
+.icon-document-html:before {
+  content: "\e902";
+  color:#FFBB32;
+}
+.icon-document-pdf:before {
+  content: "\e903";
+  color:#DF4430;
+}
+.icon-document-pic:before {
+  content: "\e904";
+  color:#009EFB;
+}
+.icon-document-ppt:before {
+  content: "\e905";
+  color:#8A8C8E;
+}
+.icon-document-rar:before {
+  content: "\e906";
+  color:#716BFF;
+}
+.icon-document-word:before {
+  content: "\e907";
+  color:#0176FA;	
+}
+.icon-document-reply:before {
+  content: "\e61a";
+}
+.icon-document-attachment:before {
+  content: "\e61b";
+}

@@ -1,0 +1,29 @@
+
+.wea-document-search{
+	position: relative;
+}
+
+.wea-document-search .wea-tree-search-layout{
+	height: 100%;
+}
+
+.wea-document-search .wea-document-search-ad {
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-bottom: 78px;
+}
+
+.wea-document-search .wea-document-search-btns {
+	width: 100%;
+	padding: 20px 0;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	border-top: 1px solid #dadada;
+	background-color: #fff;
+}
+
+.wea-document-search .wea-document-search-btns .ant-btn{
+	border-radius: 2px;
+	margin-left: 10px;
+}

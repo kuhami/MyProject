@@ -1,0 +1,205 @@
+@pdTab: 20px;
+.wea-doc-detail {
+    height: 100%;
+    .ant-tabs {
+        &-bar {
+            padding-left: @pdTab;
+            margin-bottom: 0;
+        }
+        &-nav {
+            .ant-tabs-tab {
+                margin: 0;
+                &-inner {
+                    padding: 17px @pdTab;
+                    font-size: 12px;
+                }
+            }
+        }
+        &-ink-bar {
+            height: 3px;
+        }
+    }
+    .wea-new-top-req-wapper{
+        height: 100%;
+        padding-top: 77px;
+        .wea-new-top-req{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .wea-new-top-req-content {
+        background-color: #f1f1f1;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    //回到顶部、回复
+    &-affix {
+        position: fixed;
+        min-width: 120px;
+        right: 40px;
+        bottom: 20px;
+        z-index: 100;
+        .ant-row {
+            cursor: pointer;
+            color: #fff;
+            margin-bottom: 20px;
+            width: 100%;
+            background-color: #0098c8;
+            border-radius: 3px;
+            box-shadow: 3px 3px 0px rgba(153, 153, 153, 0.349019607843137);
+            &>div {
+                text-align: center;
+                line-height: 35px;
+                white-space: nowrap;
+                &:first-child {
+                    font-size: 20px;
+                    padding: 0 8px;
+                    border-right: 1px solid #f3f3f3;
+                }
+                &:last-child {
+                    padding: 0 12px;
+                }
+            }
+            &:hover {
+                background-color: #00b2ea;
+            }
+        }
+    }
+    &-content {
+        padding: 30px 50px 100px;
+        &>div {
+            background-color: #fff;
+            border: 1px solid #e2e2e2;
+        }
+        &-main {
+            overflow: auto;
+        }
+        &-inner {
+            margin-top: @pdTab;
+            &-tab-content {
+                min-height: 600px;
+                padding: 0 @pdTab 30px @pdTab;
+                &-log {
+                    padding: 0 0 30px;
+                }
+                //文档打分
+                &-rank {
+                    width: 50%;
+                    min-width: 400px;
+                    max-width: 600px;
+                    margin: 0 auto 30px;
+                    &>p:first-child {
+                        line-height: 3;
+                        text-align: center;
+                    }
+                    &-star {
+                        line-height: 3;
+                        &>span {
+                            margin-right: 10px;
+                        }
+                        i {
+                            font-size: 24px;
+                            margin-left: 12px;
+                            cursor: pointer;
+                            vertical-align: sub;
+                        }
+                        .icon-coms-Collection {
+                            color: #c1c1c1;
+                        }
+                        .icon-coms-Collection2 {
+                            color: #ffa741;
+                        }
+                    }
+                    textarea,
+                    button {
+                        border-radius: 0;
+                    }
+                    &-list {
+                        border: 1px solid #e4e4e4;
+                        &>div:first-child {
+                            height: 44px;
+                            line-height: 44px;
+                            text-align: center;
+                            background-color: #f4f4f5;
+                        }
+                        .ant-form-item {
+                            margin: 0;
+                            padding: 16px 0;
+                            border-top: 1px solid #e4e4e4;
+                        }
+                    }
+                }
+            }
+            &-attr {
+                padding: 24px 20px 0 20px;
+                .ant-form-item-label {
+                    padding-top: 0;
+                    label:after {
+                        display: none;
+                    }
+                }
+            }
+            &-title {
+                height: 50px;
+                line-height: 50px;
+                border-bottom: 1px solid #e9e9e9;
+            }
+            //文档日志
+            .wea-tab {
+                background-color: #f2f2f2;
+                .ant-tabs.ant-tabs-card>.ant-tabs-bar {
+                    .ant-tabs-tab {
+                        margin-right: 8px;
+                    }
+                    .ant-tabs-nav-container {
+                        margin-top: 12px;
+                        .ant-tabs-tab-inner {
+                            height: 36px;
+                            line-height: 1.5;
+                        }
+                    }
+                }
+                .wea-search-tab button {
+                    background-color: #fff;
+                }
+                .mask-dark,
+                .mask-wrapper {
+                    display: none !important;
+                }
+            }
+        }
+    }
+    //回复列表
+    &-reply-modal {
+        .ant-modal-header {
+            background-color: #fafafa;
+        }
+        .ant-modal-body {
+            padding: 0;
+        }
+        .ant-modal-footer {
+            background-color: #ebebeb;
+            padding: 0;
+        }
+        //编辑
+        &-rich{
+            &>div:first-child{
+                background-color: #fff;
+                border: 1px solid #e0e0e0;
+                color: #aeaeae;
+                line-height: 30px;
+                text-align: left;
+                cursor: pointer;
+                i{
+                    margin: 0 2px 0 12px;
+                }
+            }
+        }
+        //列表
+        &-list{
+            padding: 10px 10px 10px 22px;
+        }
+    }
+}
