@@ -19,6 +19,8 @@
 			}
 			return obj;
 		}
+		console.log(CreatePerson("longen", '28', '男'));
+
 		var p1 = new CreatePerson("longen", '28', '男');
 		var p2 = new CreatePerson("tugenhua", '27', '女');
 		console.log(p1.name); // longen
@@ -35,6 +37,32 @@
 		console.log(typeof p1); // object
 		console.log(typeof p2); // object
 		console.log(p1 instanceof Object); // true
+
+//		call 和 apply 实现继承
+        function Animal(name){
+          this.name = name;
+          this.showName = function(){
+            alert(this.name);
+          }
+        }
+        console.log(new Animal("name"));
+        function Cat(name){
+//          Animal.apply(this,[name]);
+          	this.sex = "男";
+          	Animal.call(this,name);
+        }
+
+        Cat.prototype.eat = function(food) {
+
+          console.log(this.name + '正在吃：' + food);
+        };
+
+        var cat = new Cat("小咕咕");
+        cat.showName();//
+        cat.eat('12');
+
+        console.log(cat)
+
 	</script>
 
 </html>
