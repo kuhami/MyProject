@@ -35,10 +35,10 @@
 		// 区分大小写的常量名
 		define("GREETING", "欢迎访问 Runoob.com", false);
 		//不写默认false，则区分大小写，true：不区分大小写；
-		echo GREETING;
+		echo GREETING.''.' false：区分大小写；';
 		// 输出 "欢迎访问 Runoob.com"
 		echo '<br>';
-		echo greeting;
+		echo greeting.''.' true：不区分大小写；';
 		// 输出 "greeting"
 		//		define("GREETING", "欢迎访问 Runoob.com");
 
