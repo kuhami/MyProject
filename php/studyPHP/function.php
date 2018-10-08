@@ -1,16 +1,22 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: mwbyd
+ * User: lyl
  * Date: 2018/10/8
  * Time: 下午5:47
  */
-function writeName(){
-    echo "Kai Jim Refsnes";
+function writeName($fname){
+    echo $fname." Kai Jim Refsnes";
 }
 
 echo "My name is ";
-writeName();
+writeName('<i style="color: red;">li</i>');
+
+echo "<hr>";
+
+echo '这是第 " '  . __LINE__ . ' " 行';
+echo "<hr>";
+echo '该文件位于 " '  . __FILE__ . ' " ';
 
 
 ?>
