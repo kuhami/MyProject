@@ -17,6 +17,18 @@
 echo '<hr>';
 
  $cars=array("Volvo","BMW","Toyota");
+sort($cars);
+print_r($cars);
+
+echo '<hr>';
+foreach ($cars as $value)
+{
+    echo $value.'<br>';
+}
+echo '<hr>';
+ for ( $i=0; $i<count($cars);$i++){
+     echo '<br>'.''.$cars[$i];
+}
  echo $cars[0];
 
  echo '<hr>';
@@ -25,5 +37,19 @@ echo '<hr>';
 echo json_encode($arr);
 
 
+$numArray =array(3,2,6,5,8,10);
+$numCount = count($numArray);
+for($i=$numCount-1;$i>=0;$i--){
+    for($j=0;$j<$i;$j++){
+        if($numArray[$j]< $numArray[$j+1]){
+            $aa = $numArray[$j+1];
+            $numArray[$j+1]=$numArray[$j];
+            $numArray[$j]=$aa;
+        }
+    }
+}
+echo '<hr>';
+print_r($numArray);
+echo json_encode($numArray);
 
 ?>
