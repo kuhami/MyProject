@@ -98,7 +98,11 @@ E-mail: <input type="text" name="email" value="<?php echo $email;?>">
 <br><br>
 <input type="submit" name="submit" value="Submit">
 </form>
-
+<style>
+    .error{
+        color: red;
+    }
+</style>
 <?php
 echo "<h2>您输入的内容是:</h2>";
 echo $name;
