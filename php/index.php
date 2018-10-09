@@ -2,8 +2,10 @@
 <html>
 
 	<body>
+        <div>我是index.php</div>
 
 		<?php
+
 		$arr = array('name' => "小明", 'age' => 23);
 //				echo json_encode($arr);
 		//json格式exit();
