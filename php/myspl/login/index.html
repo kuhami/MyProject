@@ -1,0 +1,63 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../../js/jquery-2.2.4.min.js"></script>
+    <style type="text/css">
+        body { font:12px/1.6em "宋体" }
+        ul { list-style:none; }
+        li { margin-top:10px; }
+    </style>
+</head>
+<body>
+<h3>会员登录</h3>
+<div id="login">
+    <form method="post" action="login.php" id="form" name="form">
+        <ul>
+            <li>名字：<input type="text" name="user" id="user" size="16" maxlength="20"></li>
+            <li>密码：<input type="password" name="pass" id="pass" size="16" maxlength="20"></li>
+            <li>
+                <input type="submit" style="border:0" />
+            </li>
+            <li id="confirm"></li>
+        </ul>
+    </form>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#form").submit(function(){
+      login();
+      return false;
+    });
+  });
+  function login(){
+    var user = $("#user").val();
+    var pass = $("#pass").val();
+    if (user == ""){
+      $("#confirm").text("请输入登录用户名");
+      $("#user").focus();
+      return false;
+    }
+    if(pass == ""){
+      $("#confirm").text("请输入登录密码");
+      $("#pass").focus();
+      return false;
+    }
+    $.ajax({
+      type: "POST",
+      url: "login.php",
+      data: "id=" + user + "&p=" + pass,
+      beforeSend: function(){
+        $("confirm").text("登录中，请稍候");
+      },
+      success: function(msg){
+        if(msg == "success"){
+          $("#confirm").text("登录成功，欢迎" + user + "回来！正在进入你的空间");
+        }else {
+          $("#confirm").text("没有此用户或者密码不正确！");
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>
