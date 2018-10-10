@@ -14,7 +14,7 @@ if(! $con )
 {
     die('连接失败: ' . mysqli_error($con));
 }
-mysqli_select_db($con,'bdm256727651_db');
+mysqli_select_db($con,'myDB');
 $sql=" INSERT INTO Forms (userName, passWord)
 VALUES('$_POST[signup_userName]','$_POST[signup_passWord]') ";
 mysqli_query($con,$sql);

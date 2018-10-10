@@ -15,7 +15,7 @@ if(! $con )
     die('连接失败: ' . mysqli_error($con));
 }
 
-mysqli_select_db($con,'bdm256727651_db');
+mysqli_select_db($con,'myDB');
 $sql = "select userName,passWord FROM Forms where userName = '$_POST[login_userName]' and passWord='$_POST[login_passWord]'";
 $result = mysqli_query($con,$sql );
 $rows=mysqli_num_rows($result);
