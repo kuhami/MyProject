@@ -15,19 +15,17 @@ if (!$conn) {
 // 使用 sql 创建数据表
 
 // 使用 sql 创建数据表
-//$sql = "CREATE TABLE MyGuests (
-//id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-//firstname VARCHAR(30) NOT NULL,
-//lastname VARCHAR(30) NOT NULL,
-//email VARCHAR(50),
-//reg_date TIMESTAMP
-//)";
+$sql = "CREATE TABLE Forms (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+userName VARCHAR(30) NOT NULL,
+passWord VARCHAR(30) NOT NULL
+)";
 //
-//if ($conn->query($sql) === TRUE) {
-//    echo "Table MyGuests created successfully";
-//} else {
-//    echo "创建数据表错误: " . $conn->error;
-//}
+if ($conn->query($sql) === TRUE) {
+    echo "Table Forms created successfully";
+} else {
+    echo "创建数据表错误: " . $conn->error;
+}
 //
 
 /*$sql = "INSERT INTO MyGuests (firstname, lastname, email)
@@ -56,14 +54,14 @@ if ($conn->query($sql) === TRUE) {
 //    echo "Error: " . $sql . "<br>" . $conn->error;
 //}
 
-$sql = mysqli_query($conn,"DELETE FROM MyGuests WHERE LastName='Dooley'");
-
-
-if ($sql) {
-    echo "删除成功";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+//$sql = mysqli_query($conn,"DELETE FROM MyGuests WHERE LastName='Dooley'");
+//
+//
+//if ($sql) {
+//    echo "删除成功";
+//} else {
+//    echo "Error: " . $sql . "<br>" . $conn->error;
+//}
 
 $conn->close();
 
