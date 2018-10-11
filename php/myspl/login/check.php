@@ -15,6 +15,8 @@ if(! $con )
 
 mysqli_select_db($con,'myDB');
 
+//echo $_POST[name];
+
 $username = "select userName FROM Forms where userName = '$_POST[name]' ";
 $result = mysqli_query($con,$username );
 $rows=mysqli_num_rows($result);

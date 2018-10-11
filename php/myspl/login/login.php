@@ -20,6 +20,9 @@ $sql = "select userName,passWord FROM Forms where userName = '$_POST[login_userN
 $result = mysqli_query($con,$sql );
 $rows=mysqli_num_rows($result);
 
+
+echo $rows;
+
 if($rows){
     echo "<script>window.location.href='login.html';</script>";
     exit;
