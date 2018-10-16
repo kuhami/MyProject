@@ -11,7 +11,7 @@ $p = isset($_POST["p"]) ? $_POST["p"] : $_GET["p"];
 $id = isset($_POST["id"]) ? $_POST["id"] : $_GET["id"];
 
 $raw_success = array('code' => 1, 'msg' => '登录成功');
-$raw_fail = array('code' => 0, 'msg' => '登录失败');
+$raw_fail = array('code' => 0, 'msg' => '登录失败','data'=>['status' => 200, 'message' => '请输入密码']);
 
 $res_success = json_encode($raw_success);
 
