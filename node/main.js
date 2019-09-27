@@ -1,9 +1,17 @@
-buf = Buffer.alloc(26);
-for (var i = 0 ; i < 26 ; i++) {
-  buf[i] = i + 97;
+var http = require("http");
+var url = require("url");
+
+function start() {
+  function onRequest(request, response) {
+    var pathname = url.parse(request.url).pathname;
+    console.log("Request for " + pathname + " received.");
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.write("Hello World");
+    response.end();
+  }
+
+  http.createServer(onRequest).listen(8888);
+  console.log("Server has started.");
 }
-console.log(buf)
-console.log( buf.toJSON());       // 输出: abcdefghijklmnopqrstuvwxyz
-console.log( buf.toString('ascii',0,5));   // 输出: abcde
-console.log( buf.toString('utf8',0,5));    // 输出: abcde
-console.log( buf.toString(undefined,0,5)); // 使用 'utf8' 编码, 并输出: abcde
+
+exports.start = start;
